@@ -1,4 +1,4 @@
-# Cant Afford To Rock
+# Can't Afford To Rock
 
 ----
 
