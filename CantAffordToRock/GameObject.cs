@@ -10,7 +10,7 @@ namespace CantAffordToRock
         protected string Name = "";
         protected Texture2D Texture;
         protected Microsoft.Xna.Framework.Game game;
-        public Vector2 position = Vector2.Zero;
+        public Vector2 Position = Vector2.Zero;
 
         public GameObject(Microsoft.Xna.Framework.Game myGame)
         {
@@ -23,7 +23,7 @@ namespace CantAffordToRock
                 Texture = game.Content.Load<Texture2D>(Name);
         }
 
-        public virtual void Update(float deltaTime)
+        public virtual void Update(GameTime gameTime)
         {
         }
 
@@ -31,7 +31,7 @@ namespace CantAffordToRock
         {
             if (Texture == null)
                 return;
-            Vector2 drawPosition = position;
+            Vector2 drawPosition = Position;
             drawPosition.X -= Texture.Width / 2;
             drawPosition.Y -= Texture.Height / 2;
             batch.Draw(Texture, drawPosition, Color.White);

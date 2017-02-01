@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,26 +7,31 @@ namespace CantAffordToRock
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        private readonly List<GameObject> gameObjects = new List<GameObject>();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        private bool buttonPressed = false;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            gameObjects.Add(new Button(this, "Images/button", Vector2.One, () =>
+            {
+                buttonPressed = true;
+            }));
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            gameObjects.ForEach(x => x.LoadContent());
         }
 
         protected override void UnloadContent()
@@ -38,7 +44,7 @@ namespace CantAffordToRock
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            gameObjects.ForEach(x => x.Update(gameTime));
 
             base.Update(gameTime);
         }
@@ -47,7 +53,9 @@ namespace CantAffordToRock
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            gameObjects.ForEach(x => x.Draw(spriteBatch));
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
