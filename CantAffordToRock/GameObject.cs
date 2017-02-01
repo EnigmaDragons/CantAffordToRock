@@ -9,10 +9,10 @@ namespace CantAffordToRock
     {
         protected string Name = "";
         protected Texture2D Texture;
-        protected Game game;
+        protected Microsoft.Xna.Framework.Game game;
         public Vector2 position = Vector2.Zero;
 
-        public GameObject(Game myGame)
+        public GameObject(Microsoft.Xna.Framework.Game myGame)
         {
             game = myGame;
         }
