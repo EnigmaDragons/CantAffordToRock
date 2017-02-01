@@ -38,6 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Button.cs" />
     <Compile Include="Decks\DrummerDeck.cs" />
     <Compile Include="Decks\BassistDeck.cs" />
     <Compile Include="Decks\GuitaristDeck.cs" />
@@ -46,6 +47,7 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\MainGame.cs" />
     <Compile Include="Engine\INavigator.cs" />
+    <Compile Include="Game1.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="CoreGame\AuctionBoard.cs" />
     <Compile Include="CoreGame\Deck.cs" />
@@ -70,14 +72,22 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
+    <Content Include="Images\button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <MonoGameContentReference Include="Content\Content.mgcb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\RockFont.spritefont">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Arial.spritefont" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
