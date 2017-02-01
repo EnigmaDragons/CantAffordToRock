@@ -42,6 +42,8 @@ namespace CantAffordToRock.Views
         {
             sprites.GraphicsDevice.Clear(Color.FromNonPremultiplied(37, 37, 37, 255));
             new Centered(_game, _logo).Draw(sprites);
+            sprites.DrawString(RockFont.Font, "Press ENTER to start", new Vector2(235, 420),
+                Color.FromNonPremultiplied(237, 52, 52, 255));
         }
     }
 }

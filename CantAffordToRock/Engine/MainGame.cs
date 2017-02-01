@@ -1,4 +1,5 @@
-﻿using CantAffordToRock.Views;
+﻿using CantAffordToRock.CoreGame;
+using CantAffordToRock.Views;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -25,6 +26,7 @@ namespace CantAffordToRock.Engine
         protected override void LoadContent()
         {
             _sprites = new SpriteBatch(GraphicsDevice);
+            RockFont.Load(Content);
             _currentView?.LoadContent();
         }
 
@@ -53,7 +55,15 @@ namespace CantAffordToRock.Engine
 
         public void NavigateTo(string viewName)
         {
-            throw new System.NotImplementedException();
+            if (viewName.Equals("Auction"))
+                NavigateTo(new AuctionView(this, new AuctionBoard(new DecksFactory().CreateStandardDecks())));
+        }
+
+        private void NavigateTo(IGameView view)
+        {
+            view.LoadContent();
+            _currentView?.UnloadContent();
+            _currentView = view;
         }
     }
 }
