@@ -13,7 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-<<<<<<< HEAD
 #begin rockband-logo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -31,11 +30,10 @@
 /processor:FontDescriptionProcessor
 /processorParam:TextureFormat=Compressed
 /build:RockFont.spritefont
-=======
+
 #begin Arial.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:TextureFormat=Compressed
 /build:Arial.spritefont
->>>>>>> refs/remotes/origin/master
 
