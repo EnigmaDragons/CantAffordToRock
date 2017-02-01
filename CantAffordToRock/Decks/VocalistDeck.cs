@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using CantAffordToRock.Game;
+using CantAffordToRock.CoreGame;
 
 namespace CantAffordToRock.Decks
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace CantAffordToRock.Game
+namespace CantAffordToRock.CoreGame
 {
     public class Rocker
     {

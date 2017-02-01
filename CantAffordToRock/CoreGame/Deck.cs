@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CantAffordToRock.Game
+namespace CantAffordToRock.CoreGame
 {
     public class Deck
     {

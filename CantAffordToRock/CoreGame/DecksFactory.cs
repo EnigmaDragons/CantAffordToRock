@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CantAffordToRock.Decks;
 
-namespace CantAffordToRock.Game
+namespace CantAffordToRock.CoreGame
 {
     public class DecksFactory
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CantAffordToRock.Game
+namespace CantAffordToRock.CoreGame
 {
     public class AuctionBoard
     {
