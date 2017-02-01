@@ -5,11 +5,11 @@ namespace CantAffordToRock.Game
     {
         public Instrument Instrument { get; }
         public string Name { get; }
-        public int Talent { get; }
         public int Charisma { get; }
+        public int Talent { get; }
         public int Opportunism { get; }
 
-        public Rocker(Instrument instrument, string name, int talent, int charisma, int opportunism)
+        public Rocker(Instrument instrument, string name, int charisma, int talent, int opportunism)
         {
             Instrument = instrument;
             Name = name;

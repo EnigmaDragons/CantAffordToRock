@@ -38,9 +38,15 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Decks\DrummerDeck.cs" />
+    <Compile Include="Decks\BassistDeck.cs" />
+    <Compile Include="Decks\GuitaristDeck.cs" />
+    <Compile Include="Decks\KeyboardistDeck.cs" />
+    <Compile Include="Decks\VocalistDeck.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Game\AuctionBoard.cs" />
     <Compile Include="Game\Deck.cs" />
+    <Compile Include="Game\DecksFactory.cs" />
     <Compile Include="Game\Instrument.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
