@@ -7,9 +7,10 @@ namespace CantAffordToRock
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         private readonly List<GameObject> gameObjects = new List<GameObject>();
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private SpriteFont appFont;
 
         private bool buttonPressed = false;
 
@@ -20,7 +21,7 @@ namespace CantAffordToRock
 
         protected override void Initialize()
         {
-            gameObjects.Add(new Button(this, "Images/button", Vector2.One, () =>
+            gameObjects.Add(new Button(this, "Images/button", new Vector2(100, 100), 0.2f, () =>
             {
                 buttonPressed = true;
             }));
@@ -31,6 +32,7 @@ namespace CantAffordToRock
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            appFont = Content.Load<SpriteFont>("Content/Arial");
             gameObjects.ForEach(x => x.LoadContent());
         }
 
@@ -54,6 +56,7 @@ namespace CantAffordToRock
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            spriteBatch.DrawString(appFont, "Hello World", Vector2.One, Color.Red);
             gameObjects.ForEach(x => x.Draw(spriteBatch));
             spriteBatch.End();
 

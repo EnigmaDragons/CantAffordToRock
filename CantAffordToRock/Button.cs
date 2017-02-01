@@ -10,10 +10,11 @@ namespace CantAffordToRock
 
         private bool pressed = false;
 
-        public Button(Microsoft.Xna.Framework.Game game, string name, Vector2 position, Action onClick) : base(game)
+        public Button(Microsoft.Xna.Framework.Game game, string name, Vector2 position, float scale, Action onClick) : base(game)
         {
             Name = name;
             Position = position;
+            Scale = scale;
             this.onClick = onClick;
         }
 
